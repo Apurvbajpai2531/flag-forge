@@ -1,0 +1,11 @@
+groups:
+- name: test-alerts
+  rules:
+  - alert: TestAlert
+    expr: vector(1)
+    for: 10s
+    labels:
+      severity: critical
+    annotations:
+      summary: "Test alert working"
+      description: "This is a test alert"

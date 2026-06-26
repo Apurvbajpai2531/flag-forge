@@ -1,0 +1,13 @@
+serverFiles:
+  alerting_rules.yml:
+    groups:
+    - name: custom-alerts
+      rules:
+      - alert: HighCPUUsage
+        expr: rate(container_cpu_usage_seconds_total[1m]) > 0.5
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage detected"serverFiles:
+ 
